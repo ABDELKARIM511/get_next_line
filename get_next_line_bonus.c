@@ -89,6 +89,8 @@ char	*get_next_line(int fd)
 	char	*buffer;
 	char	*line;
 
+	if (BUFFER_SIZE < 0 || BUFFER_SIZE > 2147483646)
+		return (0);
 	buffer = ft_calloc(BUFFER_SIZE + 1, 1);
 	if (!buffer)
 		return (NULL);
